@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,9 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ak-gE-CQ1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ak-gE-CQ1">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="119" id="y7e-hA-StO">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="119"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y7e-hA-StO" id="MXZ-fQ-Ffr">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="118"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wil-jS-iI4">
+                                                    <rect key="frame" x="0.0" y="-4" width="600" height="126"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Cheesburger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuA-a2-FlZ">
+                                                    <rect key="frame" x="8" y="48" width="584" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Z90-eY-xb3"/>
+                                                        <constraint firstAttribute="width" constant="584" id="fmA-MT-ekf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                                    <color key="textColor" red="0.95064807920000005" green="1" blue="0.94668253440000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.60999999999999999" colorSpace="calibratedRGB"/>
+                                                    <size key="shadowOffset" width="-1" height="-1"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="fmA-MT-ekf"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Wil-jS-iI4" firstAttribute="top" secondItem="MXZ-fQ-Ffr" secondAttribute="top" id="C7O-Qk-obd"/>
+                                                <constraint firstItem="IuA-a2-FlZ" firstAttribute="leading" secondItem="MXZ-fQ-Ffr" secondAttribute="leadingMargin" id="HIH-sk-9qB"/>
+                                                <constraint firstItem="Wil-jS-iI4" firstAttribute="leading" secondItem="MXZ-fQ-Ffr" secondAttribute="leading" id="SfW-jn-AFc"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wil-jS-iI4" secondAttribute="trailing" id="aGg-lb-ogq"/>
+                                                <constraint firstItem="IuA-a2-FlZ" firstAttribute="trailing" secondItem="MXZ-fQ-Ffr" secondAttribute="trailingMargin" id="aIA-8v-RnS"/>
+                                                <constraint firstItem="IuA-a2-FlZ" firstAttribute="centerY" secondItem="MXZ-fQ-Ffr" secondAttribute="centerY" id="eQe-3B-ImI"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wil-jS-iI4" secondAttribute="bottom" id="hTQ-IR-Qg9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -30,7 +72,11 @@
                             <constraint firstAttribute="trailing" secondItem="7ak-gE-CQ1" secondAttribute="trailing" id="crd-ab-Nq7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="236-Aa-Fis"/>
+                    <navigationItem key="navigationItem" id="236-Aa-Fis">
+                        <barButtonItem key="rightBarButtonItem" title="+ New" id="vak-La-D6k">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

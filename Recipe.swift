@@ -21,8 +21,8 @@ class Recipe: NSManagedObject {
     }
     
     func getRecipeImg() -> UIImage {
-        let img = UIImage(data: self.image!)
-        return img!
+        let img = UIImage(data: self.image!)!
+        return img
     }
 
 }

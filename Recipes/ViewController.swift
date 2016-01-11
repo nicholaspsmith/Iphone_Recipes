@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    var recipes = [Recipe]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return recipes.count
     }
 }
 

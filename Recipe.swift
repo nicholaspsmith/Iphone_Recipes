@@ -16,7 +16,7 @@ class Recipe: NSManagedObject {
 // Insert code here to add functionality to your managed object subclass
     
     func setRecipeImage(img: UIImage) {
-        let data = UIImagePNGRepresentation(img)
+        let data = UIImageJPEGRepresentation(img, 0.7)
         self.image = data
     }
     

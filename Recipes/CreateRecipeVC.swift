@@ -30,6 +30,7 @@ class CreateRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
+
         recipeImg.image = image
     }
     
@@ -47,6 +48,7 @@ class CreateRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavig
             recipe.title = title
             recipe.ingredients = recipeIngredients.text
             recipe.steps = recipeSteps.text
+            
             recipe.setRecipeImage(recipeImg.image!)
             
             context.insertObject(recipe)

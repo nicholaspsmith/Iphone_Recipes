@@ -29,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="118"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wil-jS-iI4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wil-jS-iI4">
                                                     <rect key="frame" x="0.0" y="-4" width="600" height="126"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Cheesburger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuA-a2-FlZ">
@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="1152" y="429"/>
         </scene>
-        <!--View Controller-->
+        <!--Create RecipeVC-->
         <scene sceneID="8HV-6G-cNg">
             <objects>
-                <viewController id="MaQ-2a-fYJ" sceneMemberID="viewController">
+                <viewController id="MaQ-2a-fYJ" customClass="CreateRecipeVC" customModule="Recipes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KtK-20-5FL"/>
                         <viewControllerLayoutGuide type="bottom" id="k41-KC-qhn"/>
@@ -119,11 +119,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="Mbq-jy-0ts">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="Mbq-jy-0ts">
                                 <rect key="frame" x="210" y="283" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="Fuq-6G-BpZ"/>
-                                    <constraint firstAttribute="width" constant="180" id="XDA-OK-U3V"/>
+                                    <constraint firstAttribute="width" constant="220" id="XDA-OK-U3V"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIT-DX-2ag">
@@ -133,12 +133,18 @@
                                     <constraint firstAttribute="width" constant="97" id="zIb-ci-Z6k"/>
                                 </constraints>
                                 <state key="normal" title="Create Recipe"/>
+                                <connections>
+                                    <action selector="createRecipe:" destination="MaQ-2a-fYJ" eventType="touchUpInside" id="WJ8-lf-15y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-Vk-Pda">
                                 <rect key="frame" x="210" y="283" width="180" height="180"/>
                                 <state key="normal" title="Add Image">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addImage:" destination="MaQ-2a-fYJ" eventType="touchUpInside" id="dZW-um-R1b"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,6 +167,12 @@
                             <constraint firstItem="CEH-2z-0On" firstAttribute="trailing" secondItem="WnG-do-llE" secondAttribute="trailingMargin" id="wGT-K4-qDv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recipeImg" destination="Mbq-jy-0ts" id="AP4-sk-SEs"/>
+                        <outlet property="recipeIngredients" destination="CEH-2z-0On" id="6KF-Ul-053"/>
+                        <outlet property="recipeSteps" destination="AM9-GZ-CAt" id="qut-3S-HFn"/>
+                        <outlet property="recipeTitle" destination="HVd-66-8IH" id="FvP-EL-IDT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRE-mU-mpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,11 +9,15 @@
 import UIKit
 
 class CreateRecipeVC: UIViewController {
+    
+    @IBOutlet weak var recipeTitle: UITextField!
+    @IBOutlet weak var recipeIngredients: UITextField!
+    @IBOutlet weak var recipeSteps: UITextField!
+    @IBOutlet weak var recipeImg: UIImageView!
+    @IBOutlet weak var addRecipeBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     

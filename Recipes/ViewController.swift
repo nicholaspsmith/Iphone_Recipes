@@ -16,6 +16,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +27,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        if let cell = tableView.dequeueReusableCellWithIdentifier("RecipeCell") as? RecipeCell {
+            let recipe = recipes[indexPath.row]
+            cell.configureCell(recipe)
+            return cell
+        } else {
+            return RecipeCell()
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
